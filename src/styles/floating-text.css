@@ -1,0 +1,22 @@
+.floating-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.floating-text {
+    position: fixed;
+    top: 6rem;
+    /* Ajustá según la altura del header */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    max-width: 40rem;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    white-space: normal;
+    line-height: 1.5;
+}

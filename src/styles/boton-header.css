@@ -1,0 +1,23 @@
+/* BOTONES */
+.boton-header {
+    background-color: #08a008;
+    color: white;
+    border: none;
+    padding: .6em 1.2em;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.boton-header:hover {
+    background-color: red;
+}
+
+/* Icono */
+.icono {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,20 @@
+/* ESTILO GENERAL DEL HEADER */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100vw;
+    /* Evita desbordes horizontales */
+    background-color: black;
+    color: white;
+    padding: 0.1vh 0.1vw;
+    justify-content: space-around;
+    /* Distribuye uniformemente */
+    box-sizing: border-box;
+    height: 8rem;
+    flex-wrap: wrap;
+    /* Permite que se acomode en pantallas pequeñas */
+    overflow-x: hidden;
+    /* Previene scroll horizontal */
+}
