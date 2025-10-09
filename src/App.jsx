@@ -4,7 +4,9 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
+import StaffLaboratorio from './components/StaffLaboratorio';
 import FormularioContacto from './components/FormularioContacto';
+
 
 const App = () => {
   return (
@@ -15,7 +17,8 @@ const App = () => {
         <Gallery />
         <Routes>
           <Route path="/" element={<h2>Home Page</h2>} />
-          <Route path="/about" element={<h2>About Page</h2>} />
+          {/* Ruta para el Staff del Laboratorio */}
+          <Route path="/staff" element={<StaffLaboratorio />} />
           {/* Ruta para el formulario de contacto */}
           <Route path="/contacto" element={<FormularioContacto />} />
         </Routes>

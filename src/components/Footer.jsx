@@ -4,9 +4,11 @@ import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-
 import '../styles/footer.css';
 
 const Footer = () => {
+    const anioActual = new Date().getFullYear();
     return (
         <footer className="footer">
             <div className="footer-contact">
+                {/* Seccion de enlaces */}
                 <p>
                     <FontAwesomeIcon icon={faMapMarkerAlt} />{' '}
                     <a
@@ -26,8 +28,10 @@ const Footer = () => {
                 </p>
             </div>
             <div>
-                <p>Laboratorio de Automotores - FIE - UNDEF &copy; 2025</p>
-                <p>Desarrollado por: Gerhard E. RAITH</p>
+                {/* Seccion de Copyright */}
+                <p>Laboratorio de Automotores - FIE - UNDEF &copy; {anioActual}</p>
+                <p>Todos los derechos reservados</p>
+                <p>By: Gerhard E. RAITH</p>
             </div>
 
 

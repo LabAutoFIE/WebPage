@@ -1,16 +1,36 @@
-# React + Vite
+# Laboratorio de Automotores Web Page:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📦 Estructura del Proyecto "labautoe":
+⚙️ Configuración base:
+- Vite: labautoe/vite.config.js
+- HTML de entrada: labautoe/index.html
+- Dependencias y lock:
+- labautoe/package.json
+- labautoe/pnpm-lock.yaml
+- ESLint: labautoe/eslint.config.js
 
-Currently, two official plugins are available:
+🧩 Código fuente:
+📌 App principal:
+- labautoe/src/App.jsx
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🧱 Componentes:
+Ubicados en labautoe/src/components:
+- Header.jsx — Encabezado institucional
+- Nav.jsx — Navegación principal
+- Gallery.jsx — Galería de imágenes
+- Footer.jsx — Pie de página
+- StaffLaboratorio.jsx — Vista del equipo técnico
+- FormularioContacto.jsx — Formulario institucional
 
-## React Compiler
+🎨 Estilos
+Ubicados en labautoe/src/styles:
+- header.css
+- nav.css
+- staff-laboratorio.css
+- formulario-contacto.css
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🧭 Rutas principales (definidas en App.jsx)
+|  |  | 
+| / | Home | 
+| /staff | StaffLaboratorio | 
+| /contacto | FormularioContacto | 
