@@ -7,6 +7,7 @@ import Servicios from './components/Servicios';
 import Footer from './components/Footer';
 import StaffLaboratorio from './components/StaffLaboratorio';
 import FormularioContacto from './components/FormularioContacto';
+import ServicioDetalle from './pages/ServicioDetalle';
 
 
 const App = () => {
@@ -19,10 +20,12 @@ const App = () => {
         <Servicios />
         <Routes>
           <Route path="/" element={<h2>Home Page</h2>} />
-          {/* Ruta para el Staff del Laboratorio */}
+          {/* Ruta p/ el Staff del Laboratorio */}
           <Route path="/staff" element={<StaffLaboratorio />} />
-          {/* Ruta para el formulario de contacto */}
+          {/* Ruta p/ el formulario de contacto */}
           <Route path="/contacto" element={<FormularioContacto />} />
+          {/* Ruta p/ las descripciones de Servicios */}
+          <Route path='/servicios/:id' element={<ServicioDetalle />} />
         </Routes>
         <Footer />
       </Router>

@@ -9,27 +9,46 @@
 - labautoe/pnpm-lock.yaml
 - ESLint: labautoe/eslint.config.js
 
+---
+
 🧩 Código fuente:
 📌 App principal:
 - labautoe/src/App.jsx
 
+---
+
 🧱 Componentes:
 Ubicados en labautoe/src/components:
-- Header.jsx — Encabezado institucional
-- Nav.jsx — Navegación principal
-- Gallery.jsx — Galería de imágenes
+- BotonHeader.jsx
+- Carrito.jsx
+- FloatingText.jsx (Texto flotante logo Laboratorio)
 - Footer.jsx — Pie de página
-- StaffLaboratorio.jsx — Vista del equipo técnico
 - FormularioContacto.jsx — Formulario institucional
+- Gallery.jsx — Galería de imágenes
+- Header.jsx — Encabezado institucional
+- Main.jsx
+- Nav.jsx — Navegación principal c/botones Header
+- Servicios.jsx (equivalente a Productos)
+- StaffLaboratorio.jsx — Vista del equipo técnico
 
-🎨 Estilos
+---
+
+🎨 Estilos:
 Ubicados en labautoe/src/styles:
+- boton-header.css
+- carrito.css
+- floating-text.css
+- footer.css
+- formulario-contacto.css
+- gallery.css
 - header.css
 - nav.css
+- servicios.css
 - staff-laboratorio.css
-- formulario-contacto.css
 
-🧭 Rutas principales (definidas en App.jsx)
+---
+
+🧭 Rutas principales (definidas en App.jsx):
 |  |  | 
 | / | Home | 
 | /staff | StaffLaboratorio | 

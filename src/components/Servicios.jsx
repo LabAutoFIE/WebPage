@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import loaderGif from '../assets/images/Loader.gif';
 import '../styles/servicios.css';
@@ -32,7 +34,6 @@ const Servicios = ({ agregarServicio }) => {
     );
     if (error) return <p>{error}</p>;
 
-
     return (
         <section className="servicios-grid">
             <h1>Servicios disponibles:</h1>
@@ -40,8 +41,16 @@ const Servicios = ({ agregarServicio }) => {
                 <div key={servicio.id} className="servicio-card">
                     <img src={servicio.image} alt={servicio.title} height={120} width={120} />
                     <h3>{servicio.title}</h3>
-                    <p>{servicio.description}</p>
+                    {/*<p>{servicio.description}</p >*/}
+                    <Link to={`/servicios/${servicio.id}`} className="link-detalles">
+                        <FontAwesomeIcon icon={faFileLines} /> Detalle
+                    </Link>
                     <p className="precio">${servicio.price}</p>
+                    <div className="boton-agregar-container">
+                        <button onClick={() => agregarServicio(servicio)} className="boton-agregar">
+                            <FontAwesomeIcon icon={faCartPlus} /> Agregar
+                        </button>
+                    </div>
                 </div>
             ))}
         </section>

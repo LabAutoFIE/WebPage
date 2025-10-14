@@ -14,7 +14,7 @@ const Nav = () => {
     return (
         <div className='nav'>
             <nav className="nav-header">
-                <BotonHeader texto="Home" icono={<FontAwesomeIcon icon={faHouse} />} />
+                <BotonHeader texto="Home" icono={<FontAwesomeIcon icon={faHouse} />} to="home" />
                 <BotonHeader texto="Historia" icono={<FontAwesomeIcon icon={faBookOpen} />} />
                 <BotonHeader texto="Staff" icono={<FontAwesomeIcon icon={faUsers} />} to="/staff" />
                 <BotonHeader texto="Servicios" icono={<FontAwesomeIcon icon={faBoxOpen} />} />

@@ -6,20 +6,34 @@
 }
 
 .servicio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     border: 1px solid #ccc;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: .9rem;
     text-align: center;
+    height: 100%;
+    position: relative;
+
 }
 
 .servicio-card img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto 1rem;
 }
 
 .precio {
+    font-size: 1.4rem;
     font-weight: bold;
     color: #2a7;
+    margin-top: 1rem;
+    /* Espacio superior para separación */
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 /* GIF CARGANDO... */
@@ -61,4 +75,47 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* Botón agregar producto al carrito */
+.boton-agregar-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.boton-agregar {
+    background-color: #2a7;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-agregar:hover {
+    background-color: #23895c;
+}
+
+.link-detalles {
+    text-decoration: none;
+    /* Elimino el subrayado */
+    color: #0423b1;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.link-detalles:hover {
+    color: red;
+    text-decoration: none;
+    /* Aseguro que no vuelva en hover */
 }

@@ -1,0 +1,63 @@
+.detalle-servicio {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detalle-titulo {
+    font-size: 1.5rem;
+    color: blue;
+    margin-bottom: 1rem;
+}
+
+.detalle-imagen {
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.detalle-nombre {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.detalle-descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* GIF CARGANDO... */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    padding: 2rem;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    animation: girar 1s linear infinite;
+    margin: 2rem auto;
+}
+
+.loader-text {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}

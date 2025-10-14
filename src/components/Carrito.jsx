@@ -1,14 +1,19 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-const Carrito = ({ productosEnCarrito, productosEliminados }) => {
+const Carrito = ({ serviciosEnCarrito, serviciosEliminados }) => {
     return (
         <div>
             <h2>Carrito</h2>
-            {productosEnCarrito.map((producto, indice) => (
+            {serviciosEnCarrito.map((servicio, indice) => (
                 <div key={indice}>
-                    <img src={producto.image} alt={producto.title} height={80} width={80} />
-                    <p> {producto.title} : {producto.price}$ </p>
-                    <button onClick={() => productosEliminados(indice)}>Eliminar</button>
+                    <img src={servicio.image} alt={servicio.title} height={80} width={80} />
+                    <p> {servicio.title} : {servicio.price}$ </p>
+                    <button onClick={() => serviciosEliminados(indice)} className="boton-eliminar">
+                        <FontAwesomeIcon icon={faTrashAlt} /> Eliminar
+                    </button>
+
                 </div>
             ))}
         </div>
