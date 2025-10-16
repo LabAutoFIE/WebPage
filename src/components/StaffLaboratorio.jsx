@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/staff-laboratorio.css';
 
-// Importación imágenes locales
+// Importo imágenes locales:
 import fotoAna from '../assets/images/AnaGomez.jpg'
 import fotoCarla from '../assets/images/CarlaRuiz.jpg'
 import fotoLuis from '../assets/images/LuisMartinez.jpg'

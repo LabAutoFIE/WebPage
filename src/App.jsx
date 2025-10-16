@@ -1,14 +1,13 @@
-import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Gallery from './components/Gallery';
-import Servicios from './components/Servicios';
 import Footer from './components/Footer';
 import StaffLaboratorio from './components/StaffLaboratorio';
 import FormularioContacto from './components/FormularioContacto';
-import ServicioDetalle from './pages/ServicioDetalle';
-
+import Servicios from './components/Servicios';
+import Home from './pages/Home';
+import SitioEnConstruccion from './components/SitioEnConstruccion';
 
 const App = () => {
   return (
@@ -17,15 +16,19 @@ const App = () => {
         <Header />
         <Nav />
         <Gallery />
-        <Servicios />
         <Routes>
-          <Route path="/" element={<h2>Home Page</h2>} />
+          {/* Ruta p/ el Home con el carrito */}
+          <Route path='/Home' element={<Home />} />
           {/* Ruta p/ el Staff del Laboratorio */}
           <Route path="/staff" element={<StaffLaboratorio />} />
           {/* Ruta p/ el formulario de contacto */}
           <Route path="/contacto" element={<FormularioContacto />} />
-          {/* Ruta p/ las descripciones de Servicios */}
-          <Route path='/servicios/:id' element={<ServicioDetalle />} />
+          {/* Ruta p/ las descripciones de Servicios Acá al renderizar solo servicios, no está el carrito para agregar...*/}
+          <Route path="servicios" element={<Servicios />} />
+          {/* Sitios en construcción */}
+          <Route path="/historia" element={<SitioEnConstruccion mensaje="Sección Historia en construcción" />} />
+          <Route path="/equipos" element={<SitioEnConstruccion mensaje="Sección Equipamiento en construcción" />} />
+          <Route path="/carrito" element={<SitioEnConstruccion mensaje="Sección Carrito en construcción" />} />
         </Routes>
         <Footer />
       </Router>
