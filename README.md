@@ -54,18 +54,48 @@
 
 ---
 
+## 📁 Páginas del proyecto:
+### Ubicados en labautoe/src/components:
+
+#### 🏠 Home (`/`)
+Página principal con presentación institucional.
+
+#### 📖 Historia (`/historia`)
+Reseña histórica del Laboratorio de Automotores, incluyendo origen, evolución y misión institucional. *(En construcción)*
+
+#### 👥 Staff (`/staff`)
+Información sobre el equipo técnico y académico del laboratorio.
+
+#### 🛠️ Servicios (`/servicios`)
+Listado de servicios técnicos ofrecidos por el laboratorio, con descripción funcional y disponibilidad. *(En construcción)*
+
+#### 🧰 Equipamiento (`/equipos`)
+Listado de equipos disponibles en el laboratorio. *(En construcción)*
+
+#### ✉️ Contacto (`/contacto`)
+Formulario para consultas institucionales.
+
+#### 🛒 Carrito (`/carrito`)
+Resumen de servicios seleccionados por el usuario. *(En construcción)*
+
+### Ubicados en labautoe/src/pages:
+- Home  (aquí renderizo los componentes Servicios y Carrito)
+- SerivicoDetalle (para mostrar el detalle de cada servicio)
+
+---
+
 ## 🧭 Rutas principales:
 
-| Ruta           | Componente Renderizado | Descripción breve                           |
-|----------------|------------------------|---------------------------------------------|
-| `/`            | `Gallery`              | Página principal del sitio                  |
-| `/home`        | `Home`                 | Página servicios y carrito                  |
-| `/historia`    | `SitioEnConstruccion`  | Aún para desarrollar                        |
-| `/staff`       | `StaffLaboratorio`     | Información sobre el equipo del laboratorio |
-| `/servicios`   | `Servicios`            | Solo servicos sin carrito                   |
-| `/equipamiento`| `SitioEnConstruccion`  | Aún para desarrollar                        |
-| `/contacto`    | `FormularioContacto`   | Formulario institucional de contacto        |
-| `/carrito`     | `SitioEnConstruccion`  | Para luego pasar el carrito                 |
+| Ruta           | Componente Renderizado | Estado   | Descripción breve                           |
+|----------------|------------------------|----------|---------------------------------------------|
+| `/`            | `Gallery`              |    ✅   | Página principal del sitio                  |
+| `/home`        | `Home`                 |    ✅   | Página servicios y carrito                  |
+| `/historia`    | `SitioEnConstruccion`  |    🚧   | Aún para desarrollar                        |
+| `/staff`       | `StaffLaboratorio`     |    ✅   | Información sobre el equipo del laboratorio |
+| `/servicios`   | `Servicios`            |    🚧   | Solo servicos sin carrito                   |
+| `/equipamiento`| `SitioEnConstruccion`  |    🚧   | Aún para desarrollar                        |
+| `/contacto`    | `FormularioContacto`   |    ✅   | Formulario institucional de contacto        |
+| `/carrito`     | `SitioEnConstruccion`  |    🚧   | Para luego pasar el carrito                 |
 
 ---
 ## 📍 Ubicación y contacto:
