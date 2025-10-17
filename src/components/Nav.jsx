@@ -6,7 +6,7 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons'; // o faUserTie, faP
 import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons'; // o faCogs, faDesktop, faIndustry
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import '../styles/nav.css';
+import '@/styles/nav.css';
 
 const Nav = () => {
     return (

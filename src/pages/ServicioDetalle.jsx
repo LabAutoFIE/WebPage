@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import loaderGif from '../assets/images/Loader.gif';
-import '../styles/servicio-detalle.css';
+import '@/styles/servicio-detalle.css';
 
 const ServicioDetalle = () => {
     const { id } = useParams();

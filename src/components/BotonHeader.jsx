@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/boton-header.css';
+import '@/styles/boton-header.css';
 
 const BotonHeader = ({ texto, icono, to, tipo = 'button', onClick }) => {
     return to ? (

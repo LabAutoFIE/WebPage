@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Servicios from '../components/Servicios';
 import Carrito from '../components/Carrito';
-import '../styles/home.css';
+import '@/styles/home.css';
 
 const Home = () => {
     const [carrito, setCarrito] = useState([]);

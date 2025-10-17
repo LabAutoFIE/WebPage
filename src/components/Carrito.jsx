@@ -22,7 +22,7 @@ const Carrito = ({ serviciosEnCarrito, serviciosEliminados }) => {
                 </div>
             ))}
             {/* Muestro total */}
-            <h3 style={{ marginTop: '1rem' }}>Total: {total.toFixed(2)}$</h3>
+            <h3 style={{ marginTop: '1rem' }}>Total: {total.toFixed(2)} $</h3>
         </div>
     );
 };

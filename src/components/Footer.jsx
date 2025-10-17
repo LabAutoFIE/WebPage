@@ -1,7 +1,6 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import '../styles/footer.css';
+import '@/styles/footer.css';
 
 const Footer = () => {
     const anioActual = new Date().getFullYear();

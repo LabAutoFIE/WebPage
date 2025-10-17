@@ -1,5 +1,4 @@
-import React from 'react';
-import '../styles/staff-laboratorio.css';
+import '@/styles/staff-laboratorio.css';
 
 // Importo imágenes locales:
 import fotoAna from '../assets/images/AnaGomez.jpg'

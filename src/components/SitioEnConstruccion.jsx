@@ -1,5 +1,4 @@
-import React from 'react';
-import '../styles/sitio-en-construccion.css';
+import '@/styles/sitio-en-construccion.css';
 import imagenConstruccion from '../assets/images/SitioEnConstruccion.gif';
 
 

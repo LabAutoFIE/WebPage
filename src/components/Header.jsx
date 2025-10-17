@@ -1,7 +1,7 @@
-import '../styles/header.css';
+import '@/styles/header.css';
 import FloatingText from './FloatingText';
-import logoFIE from '../assets/images/EscudoLogoFIEAzul.png';
-import logoLab from '../assets/images/Auto-circulo.svg';
+import logoFIE from '@/assets/images/EscudoLogoFIEAzul.png';
+import logoLab from '@/assets/images/Auto-circulo.svg';
 import Nav from './Nav';
 import BotonHeader from './BotonHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import '../styles/floating-text.css';
+import { useState } from 'react';
+import '@/styles/floating-text.css';
 
 const FloatingText = ({ children, text }) => {
     const [visible, setVisible] = useState(false);

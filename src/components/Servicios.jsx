@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import loaderGif from '../assets/images/Loader.gif';
-import '../styles/servicios.css';
+import '@/styles/servicios.css';
 
 const Servicios = ({ agregarServicio }) => {
     const [servicios, setServicios] = useState([]);
