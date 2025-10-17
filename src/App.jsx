@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Nav from './components/Nav';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import StaffLaboratorio from './components/StaffLaboratorio';
@@ -15,7 +14,6 @@ const App = () => {
     <>
       <Router>
         <Header />
-        <Nav />
         <Gallery />
         <Routes>
           {/* Ruta p/ el Home con el carrito */}
@@ -30,6 +28,7 @@ const App = () => {
           {/* Sitios en construcción */}
           <Route path='/historia' element={<SitioEnConstruccion mensaje="Sección Historia en construcción" />} />
           <Route path='/equipos' element={<SitioEnConstruccion mensaje="Sección Equipamiento en construcción" />} />
+          <Route path='/login' element={<SitioEnConstruccion mensaje="Sección Log in en construcción" />} />
           <Route path='/carrito' element={<SitioEnConstruccion mensaje="Sección Carrito en construcción" />} />
         </Routes>
         <Footer />

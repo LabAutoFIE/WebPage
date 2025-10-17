@@ -6,7 +6,6 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons'; // o faUserTie, faP
 import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons'; // o faCogs, faDesktop, faIndustry
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; //Carrito
 import '../styles/nav.css';
 
 const Nav = () => {
@@ -19,7 +18,6 @@ const Nav = () => {
                 <BotonHeader texto="Servicios" icono={<FontAwesomeIcon icon={faBoxOpen} />} to="/servicios" />
                 <BotonHeader texto="Equipamiento" icono={<FontAwesomeIcon icon={faToolbox} />} to="/equipos" />
                 <BotonHeader texto="Contacto" icono={<FontAwesomeIcon icon={faEnvelope} />} to="/contacto" />
-                <BotonHeader texto="Carrito" icono={<FontAwesomeIcon icon={faShoppingCart} />} to="/carrito" />
             </nav>
         </div>
     );

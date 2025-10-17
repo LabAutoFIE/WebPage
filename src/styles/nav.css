@@ -6,9 +6,9 @@
     align-items: stretch;
     background-color: black;
     color: white;
-    padding: 0.1vh 0.1vw;
+    padding: 0.5vh 0.1vw;
     box-sizing: border-box;
-    height: 5rem;
+    height: auto;
     overflow-x: hidden;
     /* Previene scroll horizontal */
 }
@@ -20,7 +20,7 @@
     /* Distribuye uniformemente */
     align-items: center;
     /* Centra verticalmente */
-    padding: 1rem 0;
+    padding: .5rem 0.5rem;
     flex-wrap: wrap;
     /* Permite que se acomoden si hay poco espacio */
 }
