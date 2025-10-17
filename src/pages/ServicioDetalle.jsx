@@ -32,22 +32,18 @@ const ServicioDetalle = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <>
-            <div className="detalle-servicio">
-                <h2 className="detalle-titulo">Descripción del Servicio Nº: {id}</h2>
-                <img
-                    src={servicio.image}
-                    alt={servicio.title}
-                    className="detalle-imagen"
-                    width={120}
-                    height={120}
-                />
-                <h3 className="detalle-nombre">{servicio.title}</h3>
-                <p className="detalle-descripcion">{servicio.description}</p>
-            </div>
-
-        </>
-
+        <div className="detalle-servicio">
+            <h2 className="detalle-titulo">Descripción del Servicio Nº: {id}</h2>
+            <img
+                src={servicio.image}
+                alt={servicio.title}
+                className="detalle-imagen"
+                width={120}
+                height={120}
+            />
+            <h3 className="detalle-nombre">{servicio.title}</h3>
+            <p className="detalle-descripcion">{servicio.description}</p>
+        </div>
     );
 }
 

@@ -32,8 +32,6 @@ const Footer = () => {
                 <p>Todos los derechos reservados</p>
                 <p>By: Gerhard E. RAITH</p>
             </div>
-
-
         </footer >
     );
 };
