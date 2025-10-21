@@ -1,17 +1,19 @@
+import { useContext } from 'react';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import loaderGif from '../assets/images/Loader.gif';
+import { CarritoContext } from '@/context/CarritoContext';
 import '@/styles/servicios.css';
 
-const Servicios = ({ agregarServicio }) => {
+const Servicios = () => {
     const [servicios, setServicios] = useState([]);
-    /* API Externa PRODUCTOS / SERVICIOS */
-    const URL = 'https://fakestoreapi.com/products?limit=19';
-
+    const { agregarAlCarrito } = useContext(CarritoContext);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
+    /* API Externa PRODUCTOS / SERVICIOS */
+    const URL = 'https://fakestoreapi.com/products?limit=19';
 
     useEffect(() => {
         fetch(URL)
@@ -47,7 +49,7 @@ const Servicios = ({ agregarServicio }) => {
                     </Link>
                     <p className="precio">${servicio.price}</p>
                     <div className="boton-agregar-container">
-                        <button onClick={() => agregarServicio(servicio)} className="boton-agregar">
+                        <button onClick={() => agregarAlCarrito(servicio)} className="boton-agregar">
                             <FontAwesomeIcon icon={faCartPlus} /> Agregar
                         </button>
                     </div>

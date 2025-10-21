@@ -58,7 +58,7 @@
 ### Ubicados en labautoe/src/components:
 
 #### 🏠 Home (`/`)
-Página principal con presentación institucional.
+Página principal con presentación institucional  y servicos ofrecidos.
 
 #### 📖 Historia (`/historia`)
 Reseña histórica del Laboratorio de Automotores, incluyendo origen, evolución y misión institucional. *(En construcción)*
@@ -67,7 +67,7 @@ Reseña histórica del Laboratorio de Automotores, incluyendo origen, evolución
 Información sobre el equipo técnico y académico del laboratorio.
 
 #### 🛠️ Servicios (`/servicios`)
-Listado de servicios técnicos ofrecidos por el laboratorio, con descripción funcional y disponibilidad. *(En construcción)*
+Listado de servicios técnicos ofrecidos por el laboratorio, con descripción funcional y disponibilidad. *(se renderiza el componente Servicios puro)*
 
 #### 🧰 Equipamiento (`/equipos`)
 Listado de equipos disponibles en el laboratorio. *(En construcción)*
@@ -76,26 +76,35 @@ Listado de equipos disponibles en el laboratorio. *(En construcción)*
 Formulario para consultas institucionales.
 
 #### 🛒 Carrito (`/carrito`)
-Resumen de servicios seleccionados por el usuario. *(En construcción)*
+- Resumen de servicios seleccionados por el usuario. *(Se agregó el useContext)*
+- Se muestra en una tabla 
+- Se totaliza el total de precio.
+- Se hacen los subTotales por ítem agregado
+- Se subtotaliza por ítem agregado
+- Se totaliza ítems carrito
+- Se agrega botón vaciar carrito
+
+### Ubicados en labautoe/src/context:
+- CarritoContext
 
 ### Ubicados en labautoe/src/pages:
-- Home  (aquí renderizo los componentes Servicios y Carrito)
+- Home  (aquí renderizo el componente Servicios + una descripción Lab)
 - SerivicoDetalle (para mostrar el detalle de cada servicio)
 
 ---
 
 ## 🧭 Rutas principales:
 
-| Ruta           | Componente Renderizado | Estado   | Descripción breve                           |
-|----------------|------------------------|----------|---------------------------------------------|
-| `/`            | `Gallery`              |    ✅   | Página principal del sitio                  |
-| `/home`        | `Home`                 |    ✅   | Página servicios y carrito                  |
-| `/historia`    | `SitioEnConstruccion`  |    🚧   | Aún para desarrollar                        |
-| `/staff`       | `StaffLaboratorio`     |    ✅   | Información sobre el equipo del laboratorio |
-| `/servicios`   | `Servicios`            |    🚧   | Solo servicos sin carrito                   |
-| `/equipamiento`| `SitioEnConstruccion`  |    🚧   | Aún para desarrollar                        |
-| `/contacto`    | `FormularioContacto`   |    ✅   | Formulario institucional de contacto        |
-| `/carrito`     | `SitioEnConstruccion`  |    🚧   | Para luego pasar el carrito                 |
+| Ruta           | Componente Renderizado  | Estado   | Descripción breve                           |
+|----------------|-------------------------|----------|---------------------------------------------|
+| `/`            | `Gallery + Home + Serv` |    ✅   | Página principal del sitio                  |
+| `/home`        | `Gallery + Home + Serv` |    ✅   | Página servicios y carrito                  |
+| `/historia`    | `SitioEnConstruccion`   |    🚧   | Aún para desarrollar                        |
+| `/staff`       | `StaffLaboratorio`      |    ✅   | Información sobre el equipo del laboratorio |
+| `/servicios`   | `Servicios`             |    🚧   | Solo servicos s/ carrito                    |
+| `/equipamiento`| `SitioEnConstruccion`   |    🚧   | Aún para desarrollar                        |
+| `/contacto`    | `FormularioContacto`    |    ✅   | Formulario institucional de contacto        |
+| `/carrito`     | `Carrito`               |    ✅   | Se pasa carrito total y subtotales          |
 
 ---
 ## 📍 Ubicación y contacto:

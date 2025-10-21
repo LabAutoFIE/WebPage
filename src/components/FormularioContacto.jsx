@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BotonHeader from './BotonHeader';
-import '@/styles/formularioContacto.css';
+import '@/styles/formulario-contacto.css';
 
 const FormularioContacto = () => {
     const [formData, setFormData] = useState({
