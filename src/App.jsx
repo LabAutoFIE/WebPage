@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useAuth } from '@/context/AuthContext';
 import Header from '@/components/Header';
 import Gallery from '@/components/Gallery';
 import Footer from '@/components/Footer';
@@ -9,8 +10,12 @@ import ServicioDetalle from '@/pages/ServicioDetalle';
 import Home from '@/pages/Home';
 import SitioEnConstruccion from '@/components/SitioEnConstruccion';
 import Carrito from '@/components/Carrito';
+import RutaProtegida from '@/components/RutaProtegida';
+import Login from '@/components/Login';
 
 const App = () => {
+  const { user } = useAuth();
+  const estaAutenticado = !!user;
   return (
     <>
       <Router>
@@ -26,16 +31,20 @@ const App = () => {
           {/* Ruta p/ las descripciones de Servicios Acá al renderizar solo servicios, no está el carrito para agregar...*/}
           <Route path='/servicios' element={<Servicios />} />
           <Route path='/servicios/:id' element={<ServicioDetalle />} />
-          <Route path='/carrito' element={<Carrito />} />
+
+          <Route path='/carrito' element={
+            <RutaProtegida estaAutenticado={estaAutenticado}>
+              <Carrito />
+            </RutaProtegida>
+          } />
+          <Route path='/login' element={<Login />} />
 
           {/* Sitios en construcción */}
           <Route path='/historia' element={<SitioEnConstruccion mensaje="Sección Historia en construcción" />} />
           <Route path='/equipos' element={<SitioEnConstruccion mensaje="Sección Equipamiento en construcción" />} />
-          <Route path='/login' element={<SitioEnConstruccion mensaje="Sección Log in en construcción" />} />
-
         </Routes>
         <Footer />
-      </Router>
+      </Router >
     </>
   );
 };
