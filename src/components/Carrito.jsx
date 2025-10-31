@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { CarritoContext } from "@/context/CarritoContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Eliminar / Carrito
+import { faTrashAlt, faShoppingCart, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; // Eliminar / Carrito / Salir
+import BotonHeader from './BotonHeader';
 import '@/styles/carrito.css';
 
 const Carrito = () => {
@@ -54,7 +55,7 @@ const Carrito = () => {
             <button onClick={vaciarCarrito} className="boton-eliminar" style={{ marginTop: '1rem' }}>
                 <FontAwesomeIcon icon={faShoppingCart} /> Vaciar <FontAwesomeIcon icon={faTrashAlt} />
             </button>
-
+            <BotonHeader texto="Salir" icono={<FontAwesomeIcon icon={faSignOutAlt} />} to="/logout" />
         </div>
     );
 };

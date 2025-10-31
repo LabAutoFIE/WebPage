@@ -8,7 +8,9 @@ const Login = () => {
     const [form, setForm] = useState({ email: '', password: '' });
     const [error, setError] = useState('');
 
-    if (user) return <Navigate to="/dashboard" replace />;
+    if (user?.role === 'admin') return <Navigate to="/admin" replace />;
+    if (user?.role === 'user') return <Navigate to="/" replace />;
+
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });

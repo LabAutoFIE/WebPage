@@ -1,5 +1,5 @@
 import '@/styles/sitio-en-construccion.css';
-import imagenConstruccion from '../assets/images/SitioEnConstruccion.gif';
+import imagenConstruccion from '@/assets/images/SitioEnConstruccion.gif';
 
 
 function SitioEnConstruccion({ mensaje = "Este sitio está en construcción..." }) {

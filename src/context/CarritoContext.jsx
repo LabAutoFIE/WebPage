@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext, useCallback } from "react";
 // Creo el contexto:
 export const CarritoContext = createContext();
 // Proveedor del contexto:
@@ -35,9 +35,9 @@ export const CarritoProvider = ({ children }) => {
   };
 
   // Vacía el carrito completamente:
-  const vaciarCarrito = () => {
+  const vaciarCarrito = useCallback(() => {
     setCarrito([]);
-  };
+  }, []);
 
   return (
     <CarritoContext.Provider
@@ -47,3 +47,4 @@ export const CarritoProvider = ({ children }) => {
     </CarritoContext.Provider>
   );
 };
+export const useCarrito = () => useContext(CarritoContext);

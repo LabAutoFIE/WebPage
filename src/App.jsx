@@ -12,6 +12,8 @@ import SitioEnConstruccion from '@/components/SitioEnConstruccion';
 import Carrito from '@/components/Carrito';
 import RutaProtegida from '@/components/RutaProtegida';
 import Login from '@/components/Login';
+import Logout from '@/components/Logout';
+import Admin from './components/Admin';
 
 const App = () => {
   const { user } = useAuth();
@@ -38,6 +40,14 @@ const App = () => {
             </RutaProtegida>
           } />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
+
+          <Route path='/admin' element={
+            <RutaProtegida estaAutenticado={estaAutenticado}>
+              <Admin />
+              <SitioEnConstruccion mensaje="Sección Administrador en construcción p/ daministrar servicios" />
+            </RutaProtegida>
+          } />
 
           {/* Sitios en construcción */}
           <Route path='/historia' element={<SitioEnConstruccion mensaje="Sección Historia en construcción" />} />

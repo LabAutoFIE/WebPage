@@ -2,7 +2,7 @@ import '@/styles/header.css';
 import FloatingText from './FloatingText';
 import logoFIE from '@/assets/images/EscudoLogoFIEAzul.png';
 import logoLab from '@/assets/images/Auto-circulo.svg';
-import Nav from './Nav';
+import Navbar from './Navbar';
 import BotonHeader from './BotonHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; //Carrito
@@ -33,8 +33,8 @@ const Header = () => {
                 </div>
             </div>
             {/* Sección inferior */}
-            <div className="header-center">
-                <Nav />
+            <div className="header-nav">
+                <Navbar />
             </div>
         </header >
     );
