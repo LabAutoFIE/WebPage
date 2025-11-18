@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom';
-import '@/styles/boton-header.css';
+import styles from '@/styles/boton-header.module.css';
 
 const BotonHeader = ({ texto, icono, to, tipo = 'button', onClick }) => {
     return to ? (
-        <Link to={to} className="boton-header">
-            {icono} {texto}
+        <Link to={to} className={styles.boton_header}>
+            <span className={styles.icono}>{icono}</span> {texto}
         </Link>
     ) : (
-        <button type={tipo} className="boton-header" onClick={onClick}>
-            {icono} {texto}
+        <button type={tipo} className={styles.boton_header} onClick={onClick}>
+            <span className={styles.icono}>{icono}</span> {texto}
         </button>
     );
 };
 
 export default BotonHeader;
-

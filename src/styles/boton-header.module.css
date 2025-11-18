@@ -1,5 +1,5 @@
 /* BOTONES */
-.boton-header {
+.boton_header {
     background-color: #08a008;
     color: white;
     border: none;
@@ -14,7 +14,7 @@
     text-decoration: none;
 }
 
-.boton-header:hover {
+.boton_header:hover {
     background-color: red;
 }
 

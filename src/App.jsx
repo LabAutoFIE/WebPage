@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useAuth } from '@/context/AuthContext';
 import Header from '@/components/Header';
 import Gallery from '@/components/Gallery';
 import Footer from '@/components/Footer';
@@ -11,13 +10,13 @@ import Home from '@/pages/Home';
 import SitioEnConstruccion from '@/components/SitioEnConstruccion';
 import Carrito from '@/components/Carrito';
 import RutaProtegida from '@/components/RutaProtegida';
-import Login from '@/components/Login';
+import Login from '@/pages/Login';
 import Logout from '@/components/Logout';
-import Admin from './components/Admin';
+//import LoginLogout from '@/pages/LoginLogout'
+import Admin from '@/pages/Admin';
 
 const App = () => {
-  const { user } = useAuth();
-  const estaAutenticado = !!user;
+
   return (
     <>
       <Router>
@@ -30,12 +29,12 @@ const App = () => {
           <Route path='/staff' element={<StaffLaboratorio />} />
           {/* Ruta p/ el formulario de contacto */}
           <Route path='/contacto' element={<FormularioContacto />} />
-          {/* Ruta p/ las descripciones de Servicios Acá al renderizar solo servicios, no está el carrito para agregar...*/}
+          {/* Ruta p/ las descripciones de Servicios y usar Context también se puede agregar al carrito*/}
           <Route path='/servicios' element={<Servicios />} />
           <Route path='/servicios/:id' element={<ServicioDetalle />} />
 
           <Route path='/carrito' element={
-            <RutaProtegida estaAutenticado={estaAutenticado}>
+            <RutaProtegida>
               <Carrito />
             </RutaProtegida>
           } />
@@ -43,7 +42,7 @@ const App = () => {
           <Route path='/logout' element={<Logout />} />
 
           <Route path='/admin' element={
-            <RutaProtegida estaAutenticado={estaAutenticado}>
+            <RutaProtegida requiereRol="admin">
               <Admin />
               <SitioEnConstruccion mensaje="Sección Administrador en construcción p/ daministrar servicios" />
             </RutaProtegida>
@@ -53,8 +52,8 @@ const App = () => {
           <Route path='/historia' element={<SitioEnConstruccion mensaje="Sección Historia en construcción" />} />
           <Route path='/equipos' element={<SitioEnConstruccion mensaje="Sección Equipamiento en construcción" />} />
         </Routes>
-        <Footer />
       </Router >
+      <Footer />
     </>
   );
 };

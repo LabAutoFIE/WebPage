@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useEffect, useState } from 'react';
+import { useServiciosContext } from '@/context/ServiciosContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -8,25 +8,9 @@ import { CarritoContext } from '@/context/CarritoContext';
 import '@/styles/servicios.css';
 
 const Servicios = () => {
-    const [servicios, setServicios] = useState([]);
+    // Uso contextos Carrito /Servicios:
     const { agregarAlCarrito } = useContext(CarritoContext);
-    const [cargando, setCargando] = useState(true);
-    const [error, setError] = useState(null);
-    /* API Externa PRODUCTOS / SERVICIOS */
-    const URL = 'https://fakestoreapi.com/products?limit=19';
-
-    useEffect(() => {
-        fetch(URL)
-            .then(res => res.json())
-            .then(data => {
-                setServicios(data);
-                setCargando(false);
-            })
-            .catch(error => {
-                setError('Error al obtener servicios:', error);
-                setCargando(false);
-            });
-    }, []);
+    const { servicios, cargando, error } = useServiciosContext();
 
     if (cargando) return (
         <div className="loader-container">

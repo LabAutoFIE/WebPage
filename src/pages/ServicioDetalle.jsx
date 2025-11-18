@@ -11,7 +11,7 @@ const ServicioDetalle = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
+        fetch(`https://691c64903aaeed735c90a7b9.mockapi.io/servicios/${id}`) /*https://fakestoreapi.com/products*/
             .then(respuesta => respuesta.json())
             .then(dato => {
                 setServicio(dato);

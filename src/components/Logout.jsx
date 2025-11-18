@@ -10,9 +10,9 @@ const Logout = () => {
 
     useEffect(() => {
         const cerrarSesion = () => {
-            vaciarCarrito(); // ✅ primero vacía el carrito
-            logout();        // ✅ luego limpia el usuario
-            navigate('/', { replace: true }); // ✅ finalmente redirige
+            vaciarCarrito(); // 1ero vacía el carrito
+            logout();        // luego limpia el usuario
+            navigate('/', { replace: true }); // finalmente redirige
         };
 
         cerrarSesion();

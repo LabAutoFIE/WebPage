@@ -21,7 +21,7 @@ export const CarritoProvider = ({ children }) => {
     });
   };
 
-  // Elimina una unidad del producto, o lo quita si cantidad llega a 0
+  // Elimina una unidad del servicio, o lo quita si cantidad llega a 0
   const eliminarDelCarrito = (id) => {
     setCarrito((prevCarrito) =>
       prevCarrito
