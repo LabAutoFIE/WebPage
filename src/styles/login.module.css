@@ -26,6 +26,15 @@
     font-size: 1rem;
     border: 1px solid #aaa;
     border-radius: 4px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.loginForm input:focus {
+    outline: none;
+    border-color: #0077cc;
+    /* azul consistente c/ botón */
+    box-shadow: 0 0 4px rgba(0, 119, 204, 0.5);
 }
 
 .loginForm button {

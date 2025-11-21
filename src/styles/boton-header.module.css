@@ -22,3 +22,10 @@
 .icono {
     font-size: 1.2rem;
 }
+
+/* Variante especial para Log out */
+.logout {
+    background-color: #c0392b;
+    /* rojo institucional */
+    color: #fff;
+}

@@ -1,0 +1,135 @@
+/* Overlay del modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenedor del modal */
+.modalContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Contenido del modal */
+.modalContent {
+    padding: 1.5rem;
+}
+
+/* Encabezado */
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modalHeaderTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+/* Grid del formulario */
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.colSpan2 {
+    grid-column: span 2;
+}
+
+.smColSpan1 {
+    grid-column: span 1;
+}
+
+/* Etiquetas e inputs */
+.formLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.formInputBase {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+
+.formInputBase:focus {
+    border-color: #d40000;
+    outline: none;
+}
+
+/* Acciones del modal */
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* Botones */
+.btnBase {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btnPrimary {
+    background-color: #0078d4;
+    color: white;
+}
+
+.btnPrimary:hover {
+    background-color: #5c00a3;
+}
+
+.btnSecondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btnSecondary:hover {
+    background-color: #c2c2c2;
+}

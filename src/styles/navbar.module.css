@@ -1,0 +1,29 @@
+.navWrapper {
+    background-color: white;
+    padding: .5rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.nav {
+    background-color: black;
+    /* tu color personalizado */
+    border-radius: .6rem;
+}
+
+.navHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .navHeader {
+        flex-direction: row;
+        /* en escritorio se alinean en fila */
+        justify-content: space-around;
+    }
+}

@@ -13,18 +13,11 @@ const Login = () => {
 
     const manejarSubmit = (e) => {
         e.preventDefault();
+        const user = login({ email, password });
 
-        const usuario = login({ email, password });
-
-        if (usuario) {
-            // Guardar en localStorage si querés persistencia
-            localStorage.setItem('user', JSON.stringify({ email })); // Guarda usuario completo
-            if (usuario.role === 'admin') {
-                navigate('/admin'); // Redirige a página administración
-            } else {
-                navigate('/'); // Redirige al home
-            }
-
+        if (user) {
+            console.log(`[${new Date().toISOString()}] Login exitoso: ${user.email} (${user.role})`);
+            navigate(user.role === 'admin' ? '/admin' : '/');
         } else {
             setError('Credenciales inválidas. Intente nuevamente.');
         }

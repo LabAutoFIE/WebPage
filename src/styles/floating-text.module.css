@@ -1,9 +1,9 @@
-.floating-wrapper {
+.floatingWrapper {
     position: relative;
     display: inline-block;
 }
 
-.floating-text {
+.floatingText {
     position: fixed;
     top: 6rem;
     /* Ajustá según la altura del header */
@@ -19,4 +19,11 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     white-space: normal;
     line-height: 1.5;
+    text-align: justify;
+    /* Justifica el texto */
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    /* Activa guiones automáticos */
+    word-break: break-word;
+    /* Permite cortar palabras largas */
 }

@@ -1,4 +1,4 @@
-.boton-eliminar {
+.botonEliminar {
     background-color: #e74c3c;
     color: white;
     border: none;
@@ -12,13 +12,15 @@
     transition: background-color 0.3s ease;
 }
 
-.boton-eliminar:hover {
+.botonEliminar:hover {
     background-color: #c0392b;
 }
 
 table {
+    width: 100%;
     margin-top: 1rem;
     border: 1px solid #ccc;
+    border-collapse: collapse;
 }
 
 th,

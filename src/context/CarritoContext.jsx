@@ -5,7 +5,7 @@ export const CarritoContext = createContext();
 export const CarritoProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
 
-  // Agrego un producto al carrito, incrementando cantidad si ya existe
+  // Agrego un servicio al carrito, incrementando cantidad si ya existe
   const agregarAlCarrito = (servicio) => {
     setCarrito((prevCarrito) => {
       const existe = prevCarrito.find(item => item.id === servicio.id);

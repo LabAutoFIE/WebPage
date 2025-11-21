@@ -1,0 +1,14 @@
+.titulo {
+    text-align: center;
+}
+
+.parrafo {
+    text-align: justify;
+    /* Justifica el texto */
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    /* Activa guiones automáticos */
+    word-break: break-word;
+    /* Permite cortar palabras largas */
+    padding: 0.7rem;
+}

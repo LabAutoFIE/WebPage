@@ -37,60 +37,60 @@ export const ServiciosProvider = ({ children }) => {
         }
     };
 
-    // Funcion para agregar el producto a la API
-    const agregarProducto = async (producto) => {
+    // Funcion para agregar el servicio a la API
+    const agregarServicio = async (servicio) => {
         try {
             setError(null);
 
             const respuesta = await fetch(API, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(producto),
+                body: JSON.stringify(servicio),
             });
-            const nuevoProducto = await respuesta.json();
-            console.log("Producto agregado: ", nuevoProducto);
+            const nuevoServicio = await respuesta.json();
+            console.log("Servicio agregado: ", nuevoServicio);
 
             if (!respuesta.ok)
                 throw new Error(`Error HTTP: ${respuesta.status}`);
 
-            //Agregar el nuevo producto a la lista
-            setServicios([...servicios, nuevoProducto]);
+            //Agregar el nuevo servicio a la lista
+            setServicios([...servicios, nuevoServicio]);
 
         } catch (error) {
             console.error("Error al agregar:", error);
-            const mensajeError = "Hubo un problema al agregar el producto.";
+            const mensajeError = "Hubo un problema al agregar el servicio.";
             setError(mensajeError);
         }
     };
 
-    const editarProducto = async (producto) => {
+    const editarServicio = async (servicio) => {
         try {
             setError(null);
 
-            const respuesta = await fetch(`${API}/${producto.id}`, {
+            const respuesta = await fetch(`${API}/${servicio.id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(producto),
+                body: JSON.stringify(servicio),
             });
 
             if (!respuesta.ok)
                 throw new Error(`Error HTTP: ${respuesta.status}`);
 
-            const productoActualizado = await respuesta.json();
+            const servicioActualizado = await respuesta.json();
             setServicios(servicios.map(p =>
-                p.id === productoActualizado.id ? productoActualizado : p
+                p.id === servicioActualizado.id ? servicioActualizado : p
             ));
 
         } catch (error) {
             console.error("Error al editar:", error);
-            const mensajeError = "Hubo un problema al editar el producto.";
+            const mensajeError = "Hubo un problema al editar el servicio.";
             setError(mensajeError);
         }
     };
 
-    // Funcion para eliminar producto de la API
-    const eliminarProducto = async (id) => {
-        const confirmar = window.confirm("¿Estás seguro de eliminar?");
+    // Funcion para eliminar un servicio de la API
+    const eliminarServicio = async (id) => {
+        const confirmar = window.confirm("¿Está seguro de eliminar el servicio?");
 
         if (confirmar) {
             try {
@@ -109,7 +109,7 @@ export const ServiciosProvider = ({ children }) => {
             }
             catch (error) {
                 console.error(error.message);
-                const mensajeError = "Hubo un problema al eliminar el producto.";
+                const mensajeError = "Hubo un problema al eliminar el servicio.";
                 setError(mensajeError);
             }
         }
@@ -121,9 +121,9 @@ export const ServiciosProvider = ({ children }) => {
             cargando,
             error,
             cargarServicios,
-            agregarProducto,
-            editarProducto,
-            eliminarProducto
+            agregarServicio,
+            editarServicio,
+            eliminarServicio
         }}>
             {children}
         </ServiciosContext.Provider>

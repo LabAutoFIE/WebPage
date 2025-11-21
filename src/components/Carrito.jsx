@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { CarritoContext } from "@/context/CarritoContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faShoppingCart, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; // Eliminar / Carrito / Salir
-import BotonHeader from './BotonHeader';
-import '@/styles/carrito.css';
+import { faTrashAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Eliminar / Carrito
+import styles from '@/styles/carrito.module.css';
 
 const Carrito = () => {
     const { carrito, eliminarDelCarrito, vaciarCarrito } = useContext(CarritoContext);
@@ -18,7 +17,7 @@ const Carrito = () => {
                 <FontAwesomeIcon icon={faShoppingCart} style={{ marginRight: '0.5rem' }} />
                 Carrito:
             </h2>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <table className={styles.table}>
                 <thead>
                     <tr>
                         <th>Cantidad</th>
@@ -35,10 +34,10 @@ const Carrito = () => {
                             <td style={{ textAlign: 'center' }}>{item.cantidad}</td>
                             <td><img src={item.image} alt={item.title} height={60} /></td>
                             <td>{item.title}</td>
-                            <td>{item.price.toFixed(2)} $</td>
-                            <td>{(item.price * item.cantidad).toFixed(2)} $</td>
+                            <td>{Number(item.price).toFixed(2)} $</td>
+                            <td>{(Number(item.price) * item.cantidad).toFixed(2)} $</td>
                             <td>
-                                <button onClick={() => eliminarDelCarrito(item.id)} className="boton-eliminar">
+                                <button onClick={() => eliminarDelCarrito(item.id)} className={styles.botonEliminar}>
                                     <FontAwesomeIcon icon={faTrashAlt} /> Eliminar
                                 </button>
                             </td>
@@ -52,10 +51,9 @@ const Carrito = () => {
                 Total de productos: {totalCantidad} <br />
                 Precio total: {totalPrecio.toFixed(2)} $
             </h3>
-            <button onClick={vaciarCarrito} className="boton-eliminar" style={{ marginTop: '1rem' }}>
+            <button onClick={vaciarCarrito} className={styles.botonEliminar} style={{ marginTop: '1rem' }}>
                 <FontAwesomeIcon icon={faShoppingCart} /> Vaciar <FontAwesomeIcon icon={faTrashAlt} />
             </button>
-            <BotonHeader texto="Salir" icono={<FontAwesomeIcon icon={faSignOutAlt} />} to="/logout" />
         </div>
     );
 };

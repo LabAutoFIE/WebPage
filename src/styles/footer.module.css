@@ -1,0 +1,51 @@
+/* ESTILO GENERAL DEL FOOTER */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+
+.footerColumn {
+    flex: 1;
+    min-width: 250px;
+    /* asegura que se apilen en pantallas chicas */
+    margin: 0.5rem;
+}
+
+
+.footerContact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* espacio entre líneas */
+    font-size: 0.9rem;
+    /* tamaño de texto */
+    line-height: 1.4;
+}
+
+.footerContact a {
+    color: #00aced;
+    /* color de enlaces */
+    text-decoration: none;
+}
+
+.footerContact a:hover {
+    text-decoration: underline;
+    color: #f24b1d;
+    /* color al pasar el mouse */
+}
+
+.footerContact p {
+    margin: 0;
+    /* elimina márgenes extra */
+    display: flex;
+    align-items: center;
+    /* alinea ícono con texto */
+    gap: 0.5rem;
+    /* espacio entre ícono y texto */
+    line-height: 1.5;
+}

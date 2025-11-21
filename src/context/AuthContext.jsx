@@ -1,15 +1,13 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 // crea el contexto de Autenticacion 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    useEffect(() => {
+    const [user, setUser] = useState(() => {
         const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-    }, []); //Lógica carga usuaruio de localStorage
+        return storedUser ? JSON.parse(storedUser) : null;
+    });
+    //Lógica carga usuario de localStorage s/useEffect
 
 
     const login = ({ email, password }) => {
@@ -23,13 +21,14 @@ export const AuthProvider = ({ children }) => {
                 token: fakeToken //Token simulado
             }; // Defino usuario
             setUser(newUser);
+            localStorage.setItem('user', JSON.stringify(newUser)); //guarda usuario c/token (persistencia)
             return newUser; // ⬅ Retorna el usuario
         }
         return null;
     };
 
     const logout = () => {
-        localStorage.removeItem('user'); // necesario al usar persistencia
+        localStorage.removeItem('user'); // elimina token y usuario
         setUser(null);
     };
 

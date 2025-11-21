@@ -1,0 +1,88 @@
+/* Contenedor principal */
+.container {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+/* Panel de gestión */
+.panel {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cabecera h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Botón agregar */
+.botonAgregar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.botonAgregar:hover {
+    background-color: #a3008d;
+}
+
+.botonAgregar p {
+    margin: 0;
+}
+
+/* Item de servicio */
+.servicioItem {
+    display: grid;
+    grid-template-columns: 80px 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.servicioItem:hover {
+    background-color: #eaeaea;
+}
+
+/* Imagen del servicio */
+.imagen {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Botones de acción */
+.boton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: transform 0.2s ease;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+}

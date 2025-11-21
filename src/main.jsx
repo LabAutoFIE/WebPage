@@ -4,7 +4,8 @@ import App from './App.jsx';
 import { CarritoProvider } from '@/context/CarritoContext';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { ServiciosProvider } from './context/ServiciosContext.jsx';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
