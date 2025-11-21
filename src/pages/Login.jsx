@@ -36,6 +36,7 @@ const Login = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    placeholder="Ej.: usuario@dominio"
                 />
 
                 <label>Contraseña:</label>
@@ -44,6 +45,7 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    placeholder="Debe contener al menos 4 caracteres"
                 />
 
                 <button type="submit">Ingresar</button>

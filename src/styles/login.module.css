@@ -37,6 +37,11 @@
     box-shadow: 0 0 4px rgba(0, 119, 204, 0.5);
 }
 
+.loginForm input::placeholder {
+    color: red;
+    opacity: 1;
+}
+
 .loginForm button {
     padding: 0.75rem;
     font-size: 1rem;
