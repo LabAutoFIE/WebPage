@@ -13,45 +13,50 @@ const Carrito = () => {
 
     return (
         <div>
-            <h2>
-                <FontAwesomeIcon icon={faShoppingCart} style={{ marginRight: '0.5rem' }} />
+            <h2 className="mb-3">
+                <FontAwesomeIcon icon={faShoppingCart} className="me-2" />
                 Carrito:
             </h2>
-            <table className={styles.table}>
-                <thead>
-                    <tr>
-                        <th>Cantidad</th>
-                        <th>Imagen</th>
-                        <th>Título</th>
-                        <th>Precio unitario</th>
-                        <th>Subtotal</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {carrito.map((item) => (
-                        <tr key={item.id}>
-                            <td style={{ textAlign: 'center' }}>{item.cantidad}</td>
-                            <td><img src={item.image} alt={item.title} height={60} /></td>
-                            <td>{item.title}</td>
-                            <td>{Number(item.price).toFixed(2)} $</td>
-                            <td>{(Number(item.price) * item.cantidad).toFixed(2)} $</td>
-                            <td>
-                                <button onClick={() => eliminarDelCarrito(item.id)} className={styles.botonEliminar}>
-                                    <FontAwesomeIcon icon={faTrashAlt} /> Eliminar
-                                </button>
-                            </td>
+            {/* Tabla responsive con Bootstrap */}
+            <div className="table-responsive">
+                <table className={`table table-striped table-bordered align-middle ${styles.table}`}>
+                    <thead className="table-light">
+                        <tr>
+                            <th>Cantidad</th>
+                            <th>Imagen</th>
+                            <th>Título</th>
+                            <th>Precio unitario</th>
+                            <th>Subtotal</th>
+                            <th>Eliminar</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {carrito.map((item) => (
+                            <tr key={item.id}>
+                                <td className="text-center">{item.cantidad}</td>
+                                <td><img src={item.image} alt={item.title} height={60} /></td>
+                                <td>{item.title}</td>
+                                <td>{Number(item.price).toFixed(2)} $</td>
+                                <td>{(Number(item.price) * item.cantidad).toFixed(2)} $</td>
+                                <td>
+                                    {/* Botón híbrido: Bootstrap + estilo */}
+                                    <button onClick={() => eliminarDelCarrito(item.id)} className={`btn btn-sm d-flex align-items-center gap-2 ${styles.botonEliminar}`}
+                                    >
+                                        <FontAwesomeIcon icon={faTrashAlt} /> Eliminar
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
 
             {/* Muestro totales */}
-            <h3 style={{ marginTop: '1rem' }}>
+            <h3 className="mt-3">
                 Total de productos: {totalCantidad} <br />
                 Precio total: {totalPrecio.toFixed(2)} $
             </h3>
-            <button onClick={vaciarCarrito} className={styles.botonEliminar} style={{ marginTop: '1rem' }}>
+            <button onClick={vaciarCarrito} className={`btn mt-3 d-flex align-items-center gap-2 ${styles.botonEliminar}`}>
                 <FontAwesomeIcon icon={faShoppingCart} /> Vaciar <FontAwesomeIcon icon={faTrashAlt} />
             </button>
         </div>

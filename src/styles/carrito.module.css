@@ -1,10 +1,10 @@
 .botonEliminar {
-    background-color: #e74c3c;
-    color: white;
+    background-color: #e74c3c !important;
+    color: white !important;
     border: none;
     padding: 0.5rem 1rem;
     font-size: 0.95rem;
-    border-radius: 6px;
+    border-radius: .6rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -13,23 +13,9 @@
 }
 
 .botonEliminar:hover {
-    background-color: #c0392b;
+    background-color: #c0392b !important;
 }
 
 table {
-    width: 100%;
-    margin-top: 1rem;
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    padding: 0.5rem;
-    border-bottom: 1px solid #eee;
-}
-
-th {
-    background-color: #f9f9f9;
-    text-align: left;
+    border: 2px solid #ccc;
 }

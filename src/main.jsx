@@ -5,6 +5,7 @@ import { CarritoProvider } from '@/context/CarritoContext';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { ServiciosProvider } from './context/ServiciosContext.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
