@@ -4,10 +4,10 @@
   Content-Security-Policy: default-src 'self'; \
     script-src 'self'; \
     style-src 'self' 'unsafe-inline'; \
-    img-src 'self' https://picsum.photos data:; \
+    img-src 'self' https://picsum.photos https://*.picsum.photos data:; \
     connect-src 'self' https://ka-f.fontawesome.com https://*.mockapi.io; \
     font-src 'self' https://ka-f.fontawesome.com; \
-    media-src 'self'
+    media-src 'self';
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer-when-downgrade
   Permissions-Policy: geolocation=(self), microphone=()
@@ -16,4 +16,20 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
 
-/images/*  Cache-Control: public, max-age=31536000, immutable
+# 🎯 DIRECTIVAS DE CACHÉ ESPECÍFICAS 🎯
+
+# 1. Imágenes remotas descargadas (public/images/remote)
+# La ruta para el navegador es /images/remote/*
+/images/remote/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 2. Imágenes generales (public/images/*)
+# Esto cubre cualquier otra imagen que esté directamente en public/images
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 3. Assets de imágenes (src/assets/images)
+# Estas son generadas en la carpeta /assets/ durante el build de Vite (e.g., /assets/imagen.webp)
+# La convención de Vite es usar la carpeta /assets/ para todos los assets procesados.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
