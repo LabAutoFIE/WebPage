@@ -5,6 +5,7 @@ import { faCartPlus, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import loaderGif from '../assets/images/Loader.gif';
 import { CarritoContext } from '@/context/CarritoContext';
+import { Helmet } from 'react-helmet-async';   // 👈 p/ SEO
 import '@/styles/servicios.css';
 
 const Servicios = () => {
@@ -14,7 +15,7 @@ const Servicios = () => {
 
     if (cargando) return (
         <div className="loader-container">
-            <img src={loaderGif} alt="Cargando servicios..." className="loader" />
+            <img src={loaderGif} alt="Cargando servicios..." className="loader" loading="lazy" />
             <p className="loader-text">Cargando servicios...</p>
         </div>
     );
@@ -22,10 +23,20 @@ const Servicios = () => {
 
     return (
         <section className="servicios-grid">
+            {/* SEO c/ Helmet */}
+            <Helmet>
+
+                <title>Servicios disponibles - LabAuto</title>
+                <meta
+                    name="description"
+                    content="Explora los servicios disponibles en el laboratorio automotriz: pruebas, ensayos y más."
+                />
+            </Helmet>
             <h1>Servicios disponibles:</h1>
+
             {servicios.map(servicio => (
-                <div key={servicio.id} className="servicio-card">
-                    <img src={servicio.image} alt={servicio.title} height={120} width={120} />
+                <article key={servicio.id} className="servicio-card">
+                    <img src={servicio.image} alt={`Imagen del servicio ${servicio.title}`} height={120} width={120} loading="lazy" />
                     <h3>{servicio.title}</h3>
                     {/*<p>{servicio.description}</p >*/}
                     <Link to={`/servicios/${servicio.id}`} className="link-detalles">
@@ -33,11 +44,12 @@ const Servicios = () => {
                     </Link>
                     <p className="precio">${servicio.price}</p>
                     <div className="boton-agregar-container">
-                        <button onClick={() => agregarAlCarrito(servicio)} className="boton-agregar">
+                        <button onClick={() => agregarAlCarrito(servicio)} className="boton-agregar"
+                            aria-label={`Agregar ${servicio.title} al carrito`} >
                             <FontAwesomeIcon icon={faCartPlus} /> Agregar
                         </button>
                     </div>
-                </div>
+                </article>
             ))}
         </section>
     );

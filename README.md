@@ -92,6 +92,10 @@ Formulario para consultas institucionales.
 - SerivicoDetalle (para mostrar el detalle de cada servicio)
 
 ---
+## SEO experiment:
+<img src="public/images/SEO.jpg" alt="Experimentación con el SEO de google" width="50%">
+
+---
 
 ## 🧭 Rutas principales:
 

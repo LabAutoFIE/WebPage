@@ -14,12 +14,21 @@ import RutaProtegida from '@/components/RutaProtegida';
 import Login from '@/pages/Login';
 import Admin from '@/pages/Admin';
 import Logout from './components/Logout';
+import { Helmet } from 'react-helmet-async';
 import './App.css';
 
 const App = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Laboratorio de Automotores - Facultad de Ingeniería del Ejército</title>
+        <meta
+          name="description"
+          content="Portal oficial del Laboratorio de Automotores de la Facultad de Ingeniería del Ejército. Conoce la historia, servicios, staff y proyectos en curso."
+        />
+      </Helmet>
+
       <Router>
         <Header />
         <Gallery />
