@@ -2,12 +2,20 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    visualizer({ open: true }) // abre un reporte interactivo al hacer build
+    visualizer({ open: true }), // abre un reporte interactivo al hacer build
+    ViteImageOptimizer({
+      /* Configuración p/ optimizar WebP. */
+      webp: {
+        quality: 80,
+      },
+      // Se puede: configurar jpg, png, etc., si es necesario
+    }),
   ],
   resolve: {
     alias: {

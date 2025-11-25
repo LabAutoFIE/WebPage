@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import loaderGif from '@/assets/images/Loader.gif';
+import loaderGif from '@/assets/images/Loader68.gif';
 import '@/styles/servicio-detalle.css';
 
 const ServicioDetalle = () => {
