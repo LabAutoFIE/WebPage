@@ -3,7 +3,7 @@ import { useServiciosContext } from '@/context/ServiciosContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import loaderGif from '../assets/images/Loader68.gif';
+import loaderGif from '@/assets/images/Loader68.gif';
 import { CarritoContext } from '@/context/CarritoContext';
 import { Helmet } from 'react-helmet-async';   // 👈 p/ SEO
 import '@/styles/servicios.css';
