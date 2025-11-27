@@ -1,20 +1,36 @@
 /*
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+
+  # ⚠️ IMPORTANTE:
+  # Netlify **no permite** Cross-Origin-Embedder-Policy, COOP, CORP.
+  # Tampoco sirve HSTS aquí (lo maneja Netlify automáticamente).
+  # Por eso no se incluyen en esta versión.
+
+  Permissions-Policy: geolocation=(self), microphone=()
+
+  # ---------------------------
+  # 🚨 CONTENT SECURITY POLICY
+  # ---------------------------
+  # ✔ Permite imágenes HTTPS (mockapi, fakestoreapi, picsum, etc.)
+  # ✔ Permite fuentes externas (fontawesome)
+  # ✔ Permite estilos inline (necesario por Bootstrap)
+  # ✔ Permite conexiones a APIs HTTPS externas
+  # ⚠️ No bloquea frameworks ni recursos remotos, es flexible pero segura.
+
   Content-Security-Policy: default-src 'self'; \
     script-src 'self'; \
     style-src 'self' 'unsafe-inline'; \
-    img-src 'self' https://picsum.photos https://*.picsum.photos data:; \
-    connect-src 'self' https://ka-f.fontawesome.com https://*.mockapi.io; \
-    font-src 'self' https://ka-f.fontawesome.com; \
-    media-src 'self';
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: no-referrer-when-downgrade
-  Permissions-Policy: geolocation=(self), microphone=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-origin
+    img-src 'self' https: data:; \
+    font-src 'self' https: data:; \
+    connect-src 'self' https:; \
+    media-src 'self'; \
+    object-src 'none'; \
+    base-uri 'self'; \
+    frame-ancestors 'self';
+
 
 # 🎯 DIRECTIVAS DE CACHÉ ESPECÍFICAS 🎯
 
