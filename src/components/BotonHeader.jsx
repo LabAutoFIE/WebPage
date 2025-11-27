@@ -1,15 +1,20 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from '@/styles/boton-header.module.css';
 
 const BotonHeader = ({ texto, icono, to, tipo = 'button', onClick, variant = 'default' }) => {
-    const claseBoton = `${styles.boton_header} ${styles[variant] || ''}`;
+    const claseBase = `${styles.botonHeader} ${styles[variant] || ''}`;
 
     return to ? (
-        <Link to={to} className={claseBoton}>
+        <NavLink
+            to={to}
+            className={({ isActive }) =>
+                `${claseBase} ${isActive ? styles.activo : ''}`
+            }
+        >
             <span className={styles.icono}>{icono}</span> {texto}
-        </Link>
+        </NavLink>
     ) : (
-        <button type={tipo} className={claseBoton} onClick={onClick}>
+        <button type={tipo} className={claseBase} onClick={onClick}>
             <span className={styles.icono}>{icono}</span> {texto}
         </button>
     );

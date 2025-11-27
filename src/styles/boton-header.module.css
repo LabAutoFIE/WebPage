@@ -1,5 +1,5 @@
 /* BOTONES */
-.boton_header {
+.botonHeader {
     background-color: #08a008;
     color: white;
     border: none;
@@ -14,7 +14,7 @@
     text-decoration: none;
 }
 
-.boton_header:hover {
+.botonHeader:hover {
     background-color: red;
 }
 
@@ -28,4 +28,14 @@
     background-color: #c0392b;
     /* rojo institucional */
     color: #fff;
+}
+
+.logout:hover {
+    background-color: #d08905;
+}
+
+.activo {
+    background-color: yellow !important;
+    color: black !important;
+    transition: 0.3s ease;
 }
