@@ -5,9 +5,13 @@ import { CarritoProvider } from '@/context/CarritoContext';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { ServiciosProvider } from './context/ServiciosContext.jsx';
 import { HelmetProvider } from 'react-helmet-async';
-import 'bootstrap/dist/css/bootstrap.min.css';
-//import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+// CSS siempre estático
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+
+// Bootstrap JS: carga diferida (code splitting)
+import('bootstrap/dist/js/bootstrap.bundle.min.js');
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
