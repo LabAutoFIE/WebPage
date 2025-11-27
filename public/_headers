@@ -3,49 +3,28 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer-when-downgrade
-
-  # ⚠️ IMPORTANTE:
-  # Netlify **no permite** Cross-Origin-Embedder-Policy, COOP, CORP.
-  # Tampoco sirve HSTS aquí (lo maneja Netlify automáticamente).
-  # Por eso no se incluyen en esta versión.
-
   Permissions-Policy: geolocation=(self), microphone=()
-
-  # ---------------------------
-  # 🚨 CONTENT SECURITY POLICY
-  # ---------------------------
-  # ✔ Permite imágenes HTTPS (mockapi, fakestoreapi, picsum, etc.)
-  # ✔ Permite fuentes externas (fontawesome)
-  # ✔ Permite estilos inline (necesario por Bootstrap)
-  # ✔ Permite conexiones a APIs HTTPS externas
-  # ⚠️ No bloquea frameworks ni recursos remotos, es flexible pero segura.
-
-  Content-Security-Policy: default-src 'self'; \
-    script-src 'self'; \
-    style-src 'self' 'unsafe-inline'; \
-    img-src 'self' https: data:; \
-    font-src 'self' https: data:; \
-    connect-src 'self' https:; \
-    media-src 'self'; \
-    object-src 'none'; \
-    base-uri 'self'; \
+  Content-Security-Policy: default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' https: data:;
+    font-src 'self' https: data:;
+    connect-src 'self' https:;
+    media-src 'self';
+    object-src 'none';
+    base-uri 'self';
     frame-ancestors 'self';
-
 
 # 🎯 DIRECTIVAS DE CACHÉ ESPECÍFICAS 🎯
 
 # 1. Imágenes remotas descargadas (public/images/remote)
-# La ruta para el navegador es /images/remote/*
 /images/remote/*
   Cache-Control: public, max-age=31536000, immutable
 
 # 2. Imágenes generales (public/images/*)
-# Esto cubre cualquier otra imagen que esté directamente en public/images
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
 # 3. Assets de imágenes (src/assets/images)
-# Estas son generadas en la carpeta /assets/ durante el build de Vite (e.g., /assets/imagen.webp)
-# La convención de Vite es usar la carpeta /assets/ para todos los assets procesados.
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
