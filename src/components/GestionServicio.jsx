@@ -2,9 +2,9 @@ import { useState } from "react";
 import FormServicio from "./FormularioServicio";
 import { useServiciosContext } from "@context/ServiciosContext";
 import styles from "@styles/gestion-servicio.module.css";
-import CirclePlus from "@assets/images/CirclePlus";
-import SquarePen from "@assets/images/SquarePen";
-import TrashIcon from "@assets/images/TrashIcon";
+import CirclePlus from "@assets/icons/CirclePlus";
+import SquarePen from "@assets/icons/SquarePen";
+import TrashIcon from "@assets/icons/TrashIcon";
 
 const GestionServicios = () => {
     // Cargando contexto de servicio

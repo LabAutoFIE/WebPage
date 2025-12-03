@@ -58,6 +58,8 @@ const App = () => {
             {/* Ruta p/ las descripciones de Servicios y usar Context también se puede agregar al carrito*/}
             <Route path='/servicios' element={<Servicios />} />
             <Route path='/servicios/:id' element={<ServicioDetalle />} />
+            {/* Ruta p/ Busquedas*/}
+            {/*<Route path="/busqueda" element={<ResultadosBusqueda />} />*/}
             {/* Ruta protegida p/ el Carrito */}
             <Route path='/carrito' element={
               <RutaProtegida>

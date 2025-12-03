@@ -1,10 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
-import { CarritoProvider } from '@/context/CarritoContext';
-import { AuthProvider } from './context/AuthContext.jsx';
-import { ServiciosProvider } from './context/ServiciosContext.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import { AuthProvider } from '@/context/AuthContext.jsx';
+import { ServiciosProvider } from '@/context/ServiciosContext.jsx';
+import { SearchProvider } from '@/context/BusquedaContext.jsx';
+import { CarritoProvider } from '@/context/CarritoContext';
+import App from './App.jsx';
 
 // CSS siempre estático
 //import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,9 +19,11 @@ createRoot(document.getElementById('root')).render(
     <HelmetProvider>
       <AuthProvider>
         <ServiciosProvider>
-          <CarritoProvider>
-            <App />
-          </CarritoProvider>
+          <SearchProvider>
+            <CarritoProvider>
+              <App />
+            </CarritoProvider>
+          </SearchProvider>
         </ServiciosProvider>
       </AuthProvider>
     </HelmetProvider>

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useServiciosContext } from '@/context/ServiciosContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faFileLines } from '@fortawesome/free-solid-svg-icons';
@@ -7,11 +7,23 @@ import loaderGif from '@/assets/images/Loader68.gif';
 import { CarritoContext } from '@/context/CarritoContext';
 import { Helmet } from 'react-helmet-async';   // 👈 p/ SEO
 import '@/styles/servicios.css';
+import Paginador from '@/components/Paginador';
 
 const Servicios = () => {
     // Uso contextos Carrito /Servicios:
     const { agregarAlCarrito } = useContext(CarritoContext);
     const { servicios, cargando, error } = useServiciosContext();
+
+    // Estado de paginación
+    const [paginaActual, setPaginaActual] = useState(1);
+    const serviciosPorPagina = 7; // Ajustar según diseño
+
+    const totalPaginas = Math.ceil(servicios.length / serviciosPorPagina);
+
+    // Calcular servicios visibles
+    const indiceInicial = (paginaActual - 1) * serviciosPorPagina;
+    const indiceFinal = indiceInicial + serviciosPorPagina;
+    const serviciosVisibles = servicios.slice(indiceInicial, indiceFinal);
 
     if (cargando) return (
         <div className="loader-container">
@@ -22,36 +34,43 @@ const Servicios = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <section className="servicios-grid">
+        <>
             {/* SEO c/ Helmet */}
-            <Helmet>
-
+            < Helmet >
                 <title>Servicios disponibles - LabAuto</title>
                 <meta
                     name="description"
                     content="Explora los servicios disponibles en el laboratorio automotriz: pruebas, ensayos y más."
                 />
-            </Helmet>
+            </ Helmet>
             <h1>Servicios disponibles:</h1>
+            <section className="servicios-grid">
+                {serviciosVisibles.map(servicio => (
+                    <article key={servicio.id} className="servicio-card">
+                        <img src={servicio.image} alt={`Imagen del servicio ${servicio.title}`} height={120} width={120} loading="lazy" />
+                        <h3>{servicio.title}</h3>
+                        {/*<p>{servicio.description}</p >*/}
+                        <Link to={`/servicios/${servicio.id}`} className="link-detalles">
+                            <FontAwesomeIcon icon={faFileLines} /> Detalle
+                        </Link>
+                        <p className="precio">${servicio.price}</p>
+                        <div className="boton-agregar-container">
+                            <button onClick={() => agregarAlCarrito(servicio)} className="boton-agregar"
+                                aria-label={`Agregar ${servicio.title} al carrito`} >
+                                <FontAwesomeIcon icon={faCartPlus} /> Agregar
+                            </button>
+                        </div>
+                    </article>
+                ))}
 
-            {servicios.map(servicio => (
-                <article key={servicio.id} className="servicio-card">
-                    <img src={servicio.image} alt={`Imagen del servicio ${servicio.title}`} height={120} width={120} loading="lazy" />
-                    <h3>{servicio.title}</h3>
-                    {/*<p>{servicio.description}</p >*/}
-                    <Link to={`/servicios/${servicio.id}`} className="link-detalles">
-                        <FontAwesomeIcon icon={faFileLines} /> Detalle
-                    </Link>
-                    <p className="precio">${servicio.price}</p>
-                    <div className="boton-agregar-container">
-                        <button onClick={() => agregarAlCarrito(servicio)} className="boton-agregar"
-                            aria-label={`Agregar ${servicio.title} al carrito`} >
-                            <FontAwesomeIcon icon={faCartPlus} /> Agregar
-                        </button>
-                    </div>
-                </article>
-            ))}
-        </section>
+            </section>
+            {/* Paginador centrado con Bootstrap */}
+            <Paginador
+                totalPaginas={totalPaginas}
+                paginaActual={paginaActual}
+                cambiarPagina={setPaginaActual}
+            />
+        </>
     );
 };
 
