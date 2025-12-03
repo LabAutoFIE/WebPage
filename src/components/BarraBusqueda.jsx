@@ -1,7 +1,7 @@
 import { useSearch } from "@context/BusquedaContext";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "@assets/icons/SearchIcon"; // Busqueda
-
+import styles from '@/styles/barra-busqueda.module.css';
 
 const BarraBusqueda = () => {
     const { busqueda, setBusqueda } = useSearch();
@@ -11,23 +11,22 @@ const BarraBusqueda = () => {
         const valor = evento.target.value;
         setBusqueda(valor);
 
-        // Si hay texto, navegar a la página de búsqueda
+        // Si hay texto, navegar página de búsqueda
         if (valor.trim()) {
             navigate("/busqueda");
         }
     };
-
     return (
-        <form class="max-w-md mx-auto">
-            <div class="relative">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <SearchIcon className="w-5 h-5 text-body" /> // Agregado ClassName
-                </div>
+        <form className="d-flex justify-content-center my-2">
+            <div className={`input-group ${styles.barraBusqueda}`}>
+                <span className={`input-group-text ${styles.icono}`}>
+                    <SearchIcon className={styles.searchIcon} />
+                </span>
                 <input
                     type="search"
                     id="search"
-                    className="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
-                    placeholder="Buscar Productos..."
+                    className={`form-control ${styles.input}`}
+                    placeholder="Buscar Servicios..."
                     value={busqueda}
                     onChange={manejarBusqueda}
                 />

@@ -1,6 +1,7 @@
 import { useSearch } from "@context/BusquedaContext";
 import { useServiciosContext } from "@context/ServiciosContext";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Busqueda = () => {
     // usamos los contextos de busqueda y servicios.
@@ -12,44 +13,53 @@ const Busqueda = () => {
     );
 
     return (
-        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-                Servicios:
-            </h2>
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                {serviciosFiltrados.length > 0 ? (
-                    <>
-                        {serviciosFiltrados.map((servicio) => (
-                            <div key={servicio.id} className="group relative">
-                                <img
-                                    alt={servicio.title}
-                                    src={servicio.image}
-                                    className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
-                                />
-                                <div className="mt-4 flex justify-between">
-                                    <div>
-                                        <h3 className="text-sm text-gray-700">
-                                            <Link to={`/servicios/${servicio.id}`}>
-                                                <span
-                                                    aria-hidden="true"
-                                                    className="absolute inset-0"
-                                                />
-                                                {servicio.title}
-                                            </Link>
-                                        </h3>
+        <>
+            {/* SEO con Helmet */}
+            <Helmet>
+                <title>Resultados de búsqueda - LabAuto</title>
+                <meta
+                    name="description"
+                    content={`Explora los servicios que coinciden con tu búsqueda "${busqueda || "servicios"
+                        }" en el Laboratorio de Automotores.`}
+                />
+            </Helmet>
+
+            <div className="container py-5">
+                <h2 className="mb-4 text-center">
+                    Servicios:
+                </h2>
+                <div className="row">
+                    {serviciosFiltrados.length > 0 ? (
+                        <>
+                            {serviciosFiltrados.map((servicio) => (
+                                <div key={servicio.id} className="col-12 col-sm-6 col-lg-3 mb-4">
+                                    <div className="card h-100 shadow-sm">
+                                        <img
+                                            alt={servicio.title}
+                                            src={servicio.image}
+                                            className="card-img-top"
+                                            style={{ objectFit: "cover", height: "200px" }}
+                                        />
+                                        <div className="card-body d-flex flex-column justify-content-between">
+                                            <h3 className="card-title">
+                                                <Link to={`/servicios/${servicio.id}`} className="stretched-link text-decoration-none">
+                                                    {servicio.title}
+                                                </Link>
+                                            </h3>
+                                            <p className="card-text fw-bold text-primary">
+                                                ${servicio.price}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <p className="text-sm font-medium text-gray-900">
-                                        ${servicio.precio}
-                                    </p>
                                 </div>
-                            </div>
-                        ))}
-                    </>
-                ) : (
-                    <p>No hay servicios que coincidan con la búsqueda realizada.</p>
-                )}
+                            ))}
+                        </>
+                    ) : (
+                        <p className="text-center text-muted">No hay servicios que coincidan con la búsqueda realizada.</p>
+                    )}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -10,6 +10,27 @@ export default defineConfig({
     react(),
     visualizer({ open: true }), // abre un reporte interactivo al hacer build
     ViteImageOptimizer({
+      // Configuración para c/ formato
+      jpg: {
+        quality: 80, // calidad de compresión
+        progressive: true, // carga progresiva
+      },
+      png: {
+        quality: 80,
+        compressionLevel: 8, // nivel de compresión (0-9)
+      },
+      gif: {
+        optimizationLevel: 3, // nivel de optimización (0-3)
+        interlaced: false,
+      },
+      svg: {
+        multipass: true, // múltiples pasadas para optimizar
+        plugins: [
+          { name: 'removeViewBox', active: false }, // mantiene el viewBox
+          { name: 'removeDimensions', active: true },
+          { name: 'sortAttrs', active: true },
+        ],
+      },
       /* Configuración p/ optimizar WebP. */
       webp: {
         quality: 80,
@@ -17,6 +38,7 @@ export default defineConfig({
       // Se puede: configurar jpg, png, etc., si es necesario
     }),
   ],
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

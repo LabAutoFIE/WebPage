@@ -2,6 +2,15 @@
 <div align="center">
   <img width="150" height="150" alt="AutoSolo3_circle" src="https://github.com/user-attachments/assets/38627ca5-195e-4675-b25b-05d910e9b540" />
 </div>
+---
+---
+
+## 📦 Prueba Login c/Administrador:
+- **e-mail:** admin@fie.undef.edu.ar
+- **Contraseña:** admin
+
+---
+---
 
 ## 📦 Estructura del Proyecto "labautoe":
 ### ⚙️ Configuración base:
@@ -22,23 +31,30 @@
 
 ## 🧱 Componentes:
 ### Ubicados en labautoe/src/components:
-- BotonHeader.jsx
+- BarraBusqueda.jsx - Componente en el Header p/ busqueda
+- BotonHeader.jsx - Componente utilizado en la Navbar del Header
 - Carrito.jsx
 - FloatingText.jsx *(Texto flotante logo Laboratorio)*
-- Footer.jsx — Pie de página
-- FormularioContacto.jsx — Formulario institucional
-- Gallery.jsx — Galería de imágenes *(es lo que muestro en el raiz y repito en las demas paginas renderizadas)*
-- Header.jsx — Encabezado institucional con logos del Laboratorio y la Institución
-- Nav.jsx — Navegación principal c/botones a continuación Header
+- Footer.jsx - Pie de página
+- FormularioContacto.jsx - Formulario institucional
+- FormularioServicio.jsx - Formulario p/ cada dervicio
+- Gallery.jsx - Galería de imágenes *(es lo que muestro en el raiz y repito en las demas paginas renderizadas)*
+- Header.jsx - Encabezado institucional con logos del Laboratorio y la Institución
+- Logout.jsx - Para salida del usuario
+- Navbar.jsx - Navegación principal c/botones a continuación Header
+- Paginador.jsx - Lógica de paginación Servicios
+- ResultadoBusqueda - Lógica de busqueda en Servicios
+- RutaProtegida - P/ Admin y carrito -> obliga a Login
 - Servicios.jsx *(equivalente a Productos)*
 - SitioEnCostrucción.jsx *(componente que muestro en los lugares que aún no he armado)*
-- StaffLaboratorio.jsx — Vista del equipo técnico
+- StaffLaboratorio.jsx - Vista del equipo técnico
 
 ---
 
 ## 🎨 Estilos:
 Se integran con algunos estilos de Bootstrap, por ejemplo el carrusel y otros para diseño respondivo *(por ejemplo menú hamburguesa)*
 ### Ubicados en labautoe/src/styles:
+- barra-busqueda.module.css
 - boton-header.module.css
 - carrito.module.css
 - floating-text.module.css
@@ -88,18 +104,18 @@ Listado de equipos disponibles en el laboratorio. *(En construcción)*
 
 ### Ubicados en labautoe/src/context:
 - AuthContext
+- BusquedaContext
 - CarritoContext
 - ServiciosContext
+
 
 ### Ubicados en labautoe/src/pages:
 - Admin *(para administrar los servicios / productos)*
   Se renderiza GestionServicio -> se sirve FormularioServicio
-
 - Historia *(Historia del Laboratorio de Automotores)*
 #### 🏠 Home (`/`)
 Página principal con presentación institucional  y servicos ofrecidos.
 - Home  *(aquí renderizo el componente Servicios + una descripción Lab)*
-
 - Login *(para el Logueo de la página y mostrar el carrito ó adminsitrar)*
 - SerivicoDetalle *(para mostrar el detalle de cada servicio ofrecido)*
 
@@ -116,6 +132,8 @@ Página principal con presentación institucional  y servicos ofrecidos.
   -- Servicios
   -- Historia
   -- Home
+  -- Header
+  -- BarraBusqueda
 - /ser/types/bootstrap.d.ts *(para cargar CSS de bootstrap lazy / a medida que se utilizan)*
 
 ---
@@ -133,7 +151,7 @@ Página principal con presentación institucional  y servicos ofrecidos.
 | `/contacto`    | `FormularioContacto`    |    ✅   | Formulario institucional de contacto        |
 | `/carrito`     | `Carrito`               |    ✅   | Se pasa carrito total y subtotales          |
 | `/Login  `     | `Login / Logout`        |    ✅   | Entra web p/carrito o Admin                 |
-
+| `/Busqueda`    | `BarraBusqueda `        |    ✅   | Busca en Servicios                          |
 ---
 ---
 

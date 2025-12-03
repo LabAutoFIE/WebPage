@@ -44,6 +44,7 @@
     flex: 1 1 auto;
     flex-direction: column;
     text-align: center;
+    margin: 0.5rem 0;
 }
 
 /* Sección inferior: Nav */
@@ -78,10 +79,11 @@
 /* LOGO IZQUIERDO */
 .logoAuto {
     background-color: white;
-    height: 10rem;
+    width: 30%;
+    height: 30%;
     object-fit: contain;
     border-radius: 50%;
-    max-height: 10rem;
+    max-height: 100%;
 }
 
 /* LOGO DERECHO */

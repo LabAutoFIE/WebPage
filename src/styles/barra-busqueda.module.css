@@ -1,0 +1,5 @@
+#search:focus {
+    border: 3px solid #1e8a22;
+    /* azul más claro */
+    box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+}

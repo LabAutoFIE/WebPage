@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useServiciosContext } from "@context/ServiciosContext";
 import styles from "@styles/formulario-servicio.module.css";
-import X from "@assets/images/X";
+import X from "@assets/icons/X";
 
 const FormServicio = ({ servicioInicial = {}, modo = "agregar", onCerrar }) => {
 

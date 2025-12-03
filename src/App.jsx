@@ -7,16 +7,6 @@ import Home from '@/pages/Home';
 import RutaProtegida from '@/components/RutaProtegida';
 import { Helmet } from 'react-helmet-async';
 import './App.css';
-//import Historia from '@/pages/Historia';
-//import StaffLaboratorio from '@/components/StaffLaboratorio';
-//import FormularioContacto from '@/components/FormularioContacto';
-//import Servicios from '@/components/Servicios';
-//import ServicioDetalle from '@/pages/ServicioDetalle';
-//import SitioEnConstruccion from '@/components/SitioEnConstruccion';
-//import Carrito from '@/components/Carrito';
-//import Login from '@/pages/Login';
-//import Admin from '@/pages/Admin';
-//import Logout from './components/Logout';
 
 // Lazy-loaded pages/components
 const Historia = lazy(() => import('@/pages/Historia'));
@@ -29,6 +19,7 @@ const Login = lazy(() => import('@/pages/Login'));
 const Admin = lazy(() => import('@/pages/Admin'));
 const Logout = lazy(() => import('@/components/Logout'));
 const SitioEnConstruccion = lazy(() => import('@/components/SitioEnConstruccion'));
+const ResultadosBusqueda = lazy(() => import('@/components/ResultadoBusqueda'));
 
 const App = () => {
 
@@ -59,7 +50,7 @@ const App = () => {
             <Route path='/servicios' element={<Servicios />} />
             <Route path='/servicios/:id' element={<ServicioDetalle />} />
             {/* Ruta p/ Busquedas*/}
-            {/*<Route path="/busqueda" element={<ResultadosBusqueda />} />*/}
+            <Route path="/busqueda" element={<ResultadosBusqueda />} />
             {/* Ruta protegida p/ el Carrito */}
             <Route path='/carrito' element={
               <RutaProtegida>

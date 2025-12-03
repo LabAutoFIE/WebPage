@@ -1,14 +1,16 @@
 import { useContext } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; //Carrito / Usuario Log in / Log out
 import styles from '@/styles/header.module.css';
 import FloatingText from './FloatingText';
 import Navbar from './Navbar';
 import BotonHeader from './BotonHeader';
+import BarraBusqueda from "./BarraBusqueda";
 import logoFIE from '@/assets/images/EscudoLogoFIEAzul.png';
 import logoLab from '@/assets/images/Auto-circulo.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; //Carrito / Usuario Log in / Log out
 import { useAuth } from '@context/AuthContext';
 import { CarritoContext } from '@context/CarritoContext';
+import { Helmet } from "react-helmet-async";
 
 const Header = () => {
     const { carrito } = useContext(CarritoContext);
@@ -18,50 +20,66 @@ const Header = () => {
     //console.log("Header renderizado. Usuario:", user);
 
     return (
-        <header className={styles.header}>
-            {/* Sección izquierda */}
-            <div className={styles.headerLeft}>
-                <FloatingText text={`El logotipo incorporado, es el que fuera ideado en el año 1996 por el CR (R) OIM Andrés Guillermo Fernández Cendoya, jefe de curso de la especialidad en aquella época, para utilizarlo en el SIMA ’96 (Simposio de Ingeniería Moderna Automotriz). Seguidamente fue adoptado, acompañándonos hasta la fecha, como el logotipo del Laboratorio de Automotores y la especialidad dictada en nuestra Facultad.`}>
-                    <img src={logoLab} alt="Logo Laboratorio de Automotores" className={`${styles.logo} ${styles.logoAuto}`} />
-                </FloatingText>
-            </div>
-            {/* Sección central */}
-            <div className={styles.headerCenter}>
-                <h1 className={styles.tituloHeader}>Laboratorio de Automotores</h1>
-            </div>
-            {/* Sección derecha */}
-            <div className={styles.headerRight}>
-                <a href="https://www.fie.undef.edu.ar/" target="_blank" rel="noopener noreferrer">
-                    <img src={logoFIE} alt="Logo FIE" className={`${styles.logo} ${styles.logoDerecho}`} />
-                </a>
-                <div className={styles.botonesDerecha}>
-                    {estaLogeado ? (
-                        <BotonHeader
-                            texto="Log out"
-                            icono={<FontAwesomeIcon icon={faSignOutAlt} />}
-                            to="/Logout"
-                            variant="logout"
-                        />
-                    ) : (
-                        <BotonHeader
-                            texto="Log in"
-                            icono={<FontAwesomeIcon icon={faUser} />}
-                            to="/login"
-                        />
-                    )}
+        <>
+            {/* SEO con Helmet */}
+            <Helmet>
+                <title>Laboratorio de Automotores - FIE</title>
+                <meta
+                    name="description"
+                    content="Laboratorio de Automotores de la Facultad de Ingeniería del Ejército. Conoce nuestros servicios, historia y actividades."
+                />
+            </Helmet>
 
-                    <BotonHeader
-                        texto={`Carrito (${contadorEnCarrito})`}
-                        icono={<FontAwesomeIcon icon={faShoppingCart} />}
-                        to="/carrito"
-                    />
+            <header className={styles.header}>
+                {/* Sección izquierda */}
+                <div className={styles.headerLeft}>
+                    <FloatingText text={`El logotipo incorporado, es el que fuera ideado en el año 1996 por el CR (R) OIM Andrés Guillermo Fernández Cendoya, jefe de curso de la especialidad en aquella época, para utilizarlo en el SIMA ’96 (Simposio de Ingeniería Moderna Automotriz). Seguidamente fue adoptado, acompañándonos hasta la fecha, como el logotipo del Laboratorio de Automotores y la especialidad dictada en nuestra Facultad.`}>
+                        <img src={logoLab} alt="Logo Laboratorio de Automotores" className={`${styles.logo} ${styles.logoAuto}`} />
+                    </FloatingText>
                 </div>
-            </div>
-            {/* Sección inferior */}
-            <div className={styles.headerNav}>
-                <Navbar />
-            </div>
-        </header >
+                {/* Sección central */}
+                <div className={styles.headerCenter}>
+                    <h1 className={styles.tituloHeader}>Laboratorio de Automotores</h1>
+                    <div className={`flex items-center gap-3 md:gap-4 ${styles.headerCenter}`}>
+                        {/* Barra de Busqueda */}
+                        <BarraBusqueda />
+                    </div>
+                </div>
+
+                {/* Sección derecha */}
+                <div className={styles.headerRight}>
+                    <a href="https://www.fie.undef.edu.ar/" target="_blank" rel="noopener noreferrer">
+                        <img src={logoFIE} alt="Logo FIE" className={`${styles.logo} ${styles.logoDerecho}`} />
+                    </a>
+                    <div className={styles.botonesDerecha}>
+                        {estaLogeado ? (
+                            <BotonHeader
+                                texto="Log out"
+                                icono={<FontAwesomeIcon icon={faSignOutAlt} />}
+                                to="/Logout"
+                                variant="logout"
+                            />
+                        ) : (
+                            <BotonHeader
+                                texto="Log in"
+                                icono={<FontAwesomeIcon icon={faUser} />}
+                                to="/login"
+                            />
+                        )}
+
+                        <BotonHeader
+                            texto={`Carrito (${contadorEnCarrito})`}
+                            icono={<FontAwesomeIcon icon={faShoppingCart} />}
+                            to="/carrito"
+                        />
+                    </div>
+                </div>
+                {/* Sección inferior */}
+                <div className={styles.headerNav}>
+                    <Navbar />
+                </div>
+            </header >
+        </>
     );
 };
 
